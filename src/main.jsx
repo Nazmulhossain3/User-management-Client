@@ -27,11 +27,13 @@ const router = createBrowserRouter([
       },
       {
         path : '/allUser',
-        element : <AllUser></AllUser>
+        element : <AllUser></AllUser>,
+       
       },
       {
         path : '/userDetails',
-        element : <UserDetails></UserDetails>
+        element : <UserDetails></UserDetails>,
+        loader : ()=> fetch('http://localhost:5000/users')
       }
     ]
   },
