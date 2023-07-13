@@ -28,6 +28,7 @@ const CreateUser = () => {
         .then(data => {
             console.log(data)
             if(data.insertedId){
+                form.reset()
                 Swal.fire(
                     'Good job!',
                     'User is Added!',
