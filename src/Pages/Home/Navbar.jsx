@@ -10,9 +10,9 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="  bg-[#987F5B] menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
      
-      <li><Link to='/allUser'>All User</Link></li>
+      <li><Link className={({ isActive}) =>isActive ? "text-green-500" : ""} to='/allUser'>All User</Link></li>
       <li><Link to='/createUser' >Add User</Link></li>
-      <li><Link to='/userDetails'>User Details</Link></li>
+      <li><Link to='/userDetails' >User Details</Link></li>
       
       </ul>
     </div>

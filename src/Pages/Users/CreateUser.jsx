@@ -17,7 +17,7 @@ const CreateUser = () => {
         }
         console.log(users)
 
-        fetch('http://localhost:5000/allUsers',{
+        fetch('https://crud-job-task-server.vercel.app/allUsers',{
             method : 'POST',
             headers : {
                 'content-type' : 'application/json'
@@ -51,7 +51,7 @@ const CreateUser = () => {
          
           <div className=" flex md:flex-row justify-center gap-5 px-5">
           <input name='number' type="text" placeholder="Phone" className="input input-bordered input-sm  w-full max-w-xs" />
-          <input name='id' type="number" placeholder="ID" className="input input-bordered input-sm  w-full max-w-xs" />
+          <input name='id' type="text" placeholder="ID" className="input input-bordered input-sm  w-full max-w-xs" />
           </div>
          <input className="text-white border-2 mt-8 mb-4 w-96 ml-20 rounded-lg bg-green-500  btn-outline" type="submit" value="Add User" />
         </form>

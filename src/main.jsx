@@ -10,6 +10,7 @@ import Main from './Component/Main';
 import Home from './Pages/Home/Home';
 import CreateUser from './Pages/Users/CreateUser';
 import AllUser from './Pages/Users/AllUser';
+import UpdateUser from './Pages/Users/UpdateUser';
 import UserDetails from './Pages/Users/UserDetails';
 
 const router = createBrowserRouter([
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       {
         path : '/userDetails',
         element : <UserDetails></UserDetails>,
-        loader : ()=> fetch('http://localhost:5000/users')
+       
+      },
+      {
+        path : '/updateUser',
+        element : <UpdateUser></UpdateUser>
       }
     ]
   },

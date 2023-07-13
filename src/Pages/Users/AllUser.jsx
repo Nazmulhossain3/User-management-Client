@@ -6,7 +6,7 @@ const AllUser = () => {
     const [users,setUsers] = useState([])
  
  useEffect(()=> {
-  fetch('http://localhost:5000/users')
+  fetch('https://crud-job-task-server.vercel.app/users')
   .then(res => res.json())
   .then(data => setUsers(data))
 
@@ -29,7 +29,7 @@ Swal.fire({
   }).then((result) => {
     if (result.isConfirmed) {
      
-      fetch(`http://localhost:5000/users/${id}`,{
+      fetch(`https://crud-job-task-server.vercel.app/users/${id}`,{
           method : 'DELETE'
       })
         .then((res) => res.json())
@@ -52,8 +52,8 @@ Swal.fire({
 
  return (
         <div>
- <Link to='/createUser'><button className="btn btn-wide flex mx-auto mt-4 btn-outline text-white bg-green-400">Add User</button></Link>
- <div className="overflow-x-auto py-8 px-28">
+       <Link to='/createUser'><button className="btn btn-wide flex mx-auto mt-4 btn-outline text-white bg-green-400">Add User</button></Link>
+        <div className="overflow-x-auto py-8 px-28">
   <table className="table border-2 rounded-md">
     {/* head */}
     <thead>
@@ -75,7 +75,8 @@ Swal.fire({
             <td>{user.id}</td>
             <td className="flex gap-3">
            <Link to='/userDetails'> <button className="btn text-white btn-xs btn-outline bg-teal-600">View</button></Link>
-            <button className="btn btn-outline  text-white bg-teal-600 btn-xs">Edit</button>
+         
+           <Link to='/updateUser'> <button className="btn btn-outline  text-white bg-teal-600 btn-xs">Edit</button></Link>
             <button onClick={()=> handleDeleteUser(user._id)} className="btn btn-outline  text-white bg-red-400 btn-xs">Delete</button>
             </td>
           </tr>)
